@@ -1,5 +1,29 @@
 # Spring boot REST-API Application example
 
+## アプリケーションの概要
+
+URLの取得
+
+~~~
+$ kubectl get svc rest-java
+NAME        TYPE           CLUSTER-IP      EXTERNAL-IP                       
+rest-java   LoadBalancer   172.21.104.58   5b1013c8-jp-tok.lb.appdomain.cloud
+~~~
+
+
+
+* GET http://<k8s.domain.com>:8080/api/v1/person
+* GET http://<k8s.domain.com>:8080/api/v1/person/{id}
+* PUT http://<k8s.domain.com>:8080/api/v1/person/{id}
+* DELETE http://<k8s.domain.com>:8080/api/v1/person/{id}
+* POST http://<k8s.domain.com>:8080/api/v1/person
+
+
+![]("docs/sshot-1.png")
+
+
+
+
 ## Javaアプリのビルド方法
 
 コンテナ上でmavenを利用してJavaアプリケーションをビルドするので、必要な環境は、Docker CEがインストールされたパソコンだけです。その他、パソコン側にJava,maven などをインストールしてビルド環境を作ることは不要です。
@@ -94,6 +118,16 @@ f199ad476e12: Mounted from library/openjdk
 
 ## Kubernetesへのデプロイ方法
 
+デプロイ
+
 ~~~
 kubectl apply -k k8s/base
 ~~~
+
+削除
+
+~~~
+kubectl delete -k k8s/base
+~~~
+
+

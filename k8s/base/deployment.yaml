@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: rest-java
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: rest-java
@@ -15,6 +15,7 @@ spec:
       containers:
       - name: java
         image: maho/rest-java:0.1
+        imagePullPolicy: Always        
         readinessProbe:
           httpGet:
             path: /actuator/health/readiness
