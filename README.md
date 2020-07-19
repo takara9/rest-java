@@ -1,5 +1,10 @@
 # Spring boot REST-API Application example
 
+PostgreSQL と接続するバージョン
+
+** 作成中 **
+
+
 ## アプリケーションの概要
 
 URLの取得
@@ -10,13 +15,14 @@ NAME        TYPE           CLUSTER-IP      EXTERNAL-IP
 rest-java   LoadBalancer   172.21.104.58   5b1013c8-jp-tok.lb.appdomain.cloud
 ~~~
 
-
+API
 
 * GET http://<k8s.domain.com>:8080/api/v1/person
 * GET http://<k8s.domain.com>:8080/api/v1/person/{id}
 * PUT http://<k8s.domain.com>:8080/api/v1/person/{id}
 * DELETE http://<k8s.domain.com>:8080/api/v1/person/{id}
 * POST http://<k8s.domain.com>:8080/api/v1/person
+
 
 
 ![]("docs/sshot-1.png")
