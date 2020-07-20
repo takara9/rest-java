@@ -27,7 +27,7 @@ public class PersonService {
 	// @Autowiredを指定することで、必要なインスタンス化を実行してくれる
 	// fakeDao または postgres の選択がある
 	@Autowired
-	public PersonService(@Qualifier("fakeDao")PersonDao personDao) {
+	public PersonService(@Qualifier("postgres")PersonDao personDao) {
 		this.personDao = personDao;
 	}
 

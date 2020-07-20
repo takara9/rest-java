@@ -1,8 +1,8 @@
 FROM maven:3.6.3-jdk-14 AS build
 COPY src src
 COPY pom.xml pom.xml
-RUN  mvn clean package
-
+RUN  mvn clean package -DskipTests
+#RUN  mvn package
 
 FROM openjdk:14-alpine
 RUN addgroup -S spring && adduser -S spring -G spring
