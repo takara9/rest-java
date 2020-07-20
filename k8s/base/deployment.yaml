@@ -14,18 +14,27 @@ spec:
     spec:
       containers:
       - name: java
-        image: maho/rest-java:0.1
-        imagePullPolicy: Always        
+        image: maho/rest-java:1.0
+        imagePullPolicy: Always
+        env:
+        - name: DATABASE
+          value: postgres-spring
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: password
+        - name: POSTGRES_DATABASE
+          value: demodb
         readinessProbe:
           httpGet:
             path: /actuator/health/readiness
             port: 8080
-          initialDelaySeconds: 60
+          initialDelaySeconds: 30
           timeoutSeconds: 5
         livenessProbe:
           httpGet:
             path: /actuator/health/liveness
             port: 8080
-          initialDelaySeconds: 130
-          timeoutSeconds: 10
-          failureThreshold: 10
+          initialDelaySeconds: 30
+          timeoutSeconds: 5
+          failureThreshold: 5
