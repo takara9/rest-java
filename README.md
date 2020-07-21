@@ -38,7 +38,7 @@ POSTMAN https://www.postman.com/ を使ってテストする様子
 git clone https://github.com/takara9/rest-java
 cd rest-java
 docker build --tag <userid>/rest-java:0.1 .
-
+~~~
 
 ## コンテナへのリポジトリ登録方法
 
