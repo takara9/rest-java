@@ -35,9 +35,9 @@ POSTMAN https://www.postman.com/ を使ってテストする様子
 コンテナ上でmavenを利用してJavaアプリケーションをビルドするので、必要な環境は、Docker CEがインストールされたパソコンだけです。その他、パソコン側にJava,maven などをインストールしてビルド環境を作ることは不要です。
 
 ~~~
-git clone https://github.com/takara9/rest-java
-cd rest-java
-docker build --tag <userid>/rest-java:0.1 .
+git clone https://github.com/takara9/webapl-5
+cd webapl-5
+docker build --tag <userid>/webapl5:0.1 .
 ~~~
 
 ## コンテナへのリポジトリ登録方法
@@ -46,7 +46,7 @@ Docker HubのユーザーID maho の部分を置換えてプッシュします�
 
 ~~~
 docker login
-docker push <userid>/rest-java:0.1
+docker push <userid>/webapl5:0.1
 ~~~
 
 
